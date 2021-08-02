@@ -40,6 +40,7 @@ public class MyApplication extends Application {
 		passwordInput.setPromptText("password");
 		GridPane.setConstraints(passwordInput, 1, 1);
 		Button loginButton = new Button("Log In");
+		loginButton.setOnAction(e -> checkInt(passwordInput, passwordInput.getText()));
 		GridPane.setConstraints(loginButton, 1, 2);
 
 		grid.getChildren().addAll(nameInput, nameLabel, password, passwordInput, loginButton);
@@ -49,6 +50,16 @@ public class MyApplication extends Application {
 		window.show();
 	}
 
+	private boolean checkInt(TextField field,String msg) {
+		try {
+			int age = Integer.parseInt(msg);
+			System.out.println("age = " + age);
+			return true;
+		} catch (NumberFormatException e) {
+			System.out.println("Error: " + msg + " is not a num!");
+			return false;
+		}
+	}
 	public static void main(String[] args) {
 		launch();
 	}
