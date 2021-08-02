@@ -5,4 +5,5 @@ module com.ggggght.javafx {
   opens com.ggggght.javafx to javafx.fxml;
   exports com.ggggght.javafx;
   exports com.ggggght.javafx.alertBox;
+  exports com.ggggght.javafx.layout;
 }
