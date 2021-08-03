@@ -24,9 +24,7 @@ public class ChoiceApplication extends Application {
     // set default value it must exist
     choiceBox.setValue("Apples");
     // listen for selection changes
-    choiceBox.getSelectionModel().selectedItemProperty().addListener((a, oValue, nValue) -> {
-      System.out.println(nValue);
-    });
+    choiceBox.getSelectionModel().selectedItemProperty().addListener((a, oValue, nValue) -> System.out.println(nValue));
 
     Button button = new Button("Order Now!");
     button.setOnAction(e -> handleChoice(choiceBox, choiceBox.getValue()));
