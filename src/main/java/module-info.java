@@ -6,4 +6,5 @@ module com.ggggght.javafx {
   exports com.ggggght.javafx;
   exports com.ggggght.javafx.alertBox;
   exports com.ggggght.javafx.layout;
+  exports com.ggggght.javafx.tree;
 }
