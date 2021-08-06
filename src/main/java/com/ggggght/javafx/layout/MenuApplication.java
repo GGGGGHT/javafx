@@ -6,6 +6,7 @@ import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckMenuItem;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
@@ -44,8 +45,20 @@ public class MenuApplication extends Application {
     paste.setDisable(true);
     editMenu.getItems().add(paste);
 
+    Menu helpMenu = new Menu("_Help");
+    final CheckMenuItem showLines = new CheckMenuItem("Show lines");
+    showLines.setSelected(true);
+    showLines.setOnAction(e -> {
+      if (showLines.isSelected()) {
+        System.out.println("Program will now display line Number");
+      } else {
+        System.out.println("Hiding line number");
+      }
+    });
+    helpMenu.getItems().add(showLines);
+
     MenuBar menuBar = new MenuBar();
-    menuBar.getMenus().addAll(fileMenu,editMenu);
+    menuBar.getMenus().addAll(fileMenu,editMenu,helpMenu);
 
     layout = new BorderPane();
     layout.setTop(menuBar);
