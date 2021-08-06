@@ -8,4 +8,5 @@ module com.ggggght.javafx {
   exports com.ggggght.javafx.layout;
   exports com.ggggght.javafx.tree;
   exports com.ggggght.javafx.table;
+  exports com.ggggght.javafx.css;
 }
