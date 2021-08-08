@@ -1,6 +1,8 @@
 package com.ggggght.javafx.listen;
 
 import javafx.application.Application;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.scene.Scene;
@@ -41,6 +43,16 @@ public class PropertyListener extends Application {
     GridPane.setConstraints(textField, 1, 0);
     GridPane.setConstraints(button, 2, 0);
     gridPane.getChildren().addAll(nameLabel, textField, button);
+
+    IntegerProperty x = new SimpleIntegerProperty(3);
+    IntegerProperty y = new SimpleIntegerProperty();
+    y.bind(x.multiply(10));
+    System.out.println("x.getValue() = " + x.getValue());
+    System.out.println("y.getValue() = " + y.getValue());
+
+    x.setValue(100);
+    System.out.println("x.getValue() = " + x.getValue());
+    System.out.println("y.getValue() = " + y.getValue());
 
     Scene scene = new Scene(gridPane, 200, 100);
     window.setScene(scene);
