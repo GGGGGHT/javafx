@@ -17,14 +17,18 @@ public class Login  extends Application {
     window = primaryStage;
     GridPane pane = new GridPane();
     Label labelA = new Label("LabelA");
+    labelA.setId("bold-label");
     labelA.setStyle("-fx-text-fill: #F00");
     Label labelB = new Label("LabelB");
     VBox vBox = new VBox(10);
     final Button button = new Button("hello world");
+    Button button_bule = new Button("blue...");
+    button_bule.getStyleClass().add("button-blue");
+    GridPane.setConstraints(button_bule, 1, 3);
     button.setOnAction(e-> {
       System.out.println("hello world");
     });
-    vBox.getChildren().addAll(labelA, labelB, button);
+    vBox.getChildren().addAll(labelA, labelB, button,button_bule);
     pane.getChildren().addAll(vBox);
     // FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
     Scene scene = new Scene(pane, 320, 240);
